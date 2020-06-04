@@ -7,10 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * method to invoke when a message is received.Method can have optional parameters
- *	'UUID', 'MessageHeader' and any one of 'Server', 'Client' or 'Sender'. Other than these,
- *	only one more parameter must be added. When a message of the mandatory type parameter is
- *	received, this method is invoked
+ * Method to invoke when a message is received. Method can have optional parameters
+ * 'UUID', 'MessageHeader' and either 'Sender' or any of its subclass. Other than these,
+ * only one more parameter must be present which determines what kind of message the bean 
+ * handles. When a message of this type is received, this method is invoked
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
